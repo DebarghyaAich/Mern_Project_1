@@ -18,7 +18,11 @@ A full-stack practice project built using the **MERN** stack (**M**ongoDB, **E**
 ```text
 Mern_practice_project/
 ├── public/              # Static files and assets
-├── .gitignore           # Git ignore rules (node_modules, .env, etc.)
+├── src/                 # Application source code
+│   ├── app.js           # Express app configuration
+│   ├── constabts.js     # Project constants
+│   └── index.js         # Server entry point
+├── .env.sample          # Environment variables sample
 ├── package.json         # Project metadata and dependencies
 ├── package-lock.json    # Dependency lockfile
 └── README.md            # Project documentation
@@ -61,8 +65,8 @@ Ensure you have the following installed on your machine:
 
 - [x] Project initialization & environment setup
 - [x] Express & Mongoose dependency configuration
-- [x] Git repository setup & `.gitignore` management
-- [ ] Server entry point (`index.js`) and database connection
+- [x] Git repository setup
+- [ ] Server entry point (`src/index.js`) and database connection
 - [ ] RESTful API routes & controllers
 - [ ] User authentication (JWT & bcrypt)
 - [ ] React frontend setup & integration
