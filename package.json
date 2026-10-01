@@ -1,0 +1,20 @@
+{
+  "name": "mern_practice_project",
+  "version": "1.0.0",
+  "description": "this is my practice project in mernstack",
+  "keywords": [
+    "javascript",
+    "backend"
+  ],
+  "license": "ISC",
+  "author": "Debarghya Aich",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.10.3"
+  }
+}
