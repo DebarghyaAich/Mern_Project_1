@@ -20,7 +20,7 @@ Mern_practice_project/
 ├── public/              # Static files and assets
 ├── src/                 # Application source code
 │   ├── app.js           # Express app configuration
-│   ├── constabts.js     # Project constants
+│   ├── constants.js     # Project constants
 │   └── index.js         # Server entry point
 ├── .env.sample          # Environment variables sample
 ├── package.json         # Project metadata and dependencies
