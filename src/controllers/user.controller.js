@@ -1,5 +1,6 @@
 import { User } from "../models/user.models.js";
 import { apiError } from "../utils/apiError.js";
+import { apiResponse } from "../utils/apiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
@@ -47,10 +48,10 @@ const registerUser = asyncHandler(async (req, res) => {
     coverImage: coverImage?.url || ""
   });
 
-  const createdUser = await User.findById(user._id).select("-password -refresh_token");
+  const createdUser = await User.findById(user._id).select("-password -refreshToken");
 
   if (!createdUser) {
-    throw new apiError(500, "Something went wrong whilw registering the user.");
+    throw new apiError(500, "Something went wrong while registering the user.");
   }
   return res.status(201).json(new apiResponse(201, createdUser, "User registered successfully."));
 });
