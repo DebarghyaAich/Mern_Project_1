@@ -25,7 +25,7 @@ const registerUser = asyncHandler(async (req, res) => {
   if (existedUser) {
     throw new apiError(400, "User with email or username already exists");
   }
-  const avatarLocalPath = req.files?.avatar?.[0]?.path;
+  const avatarLocalPath = req.files?.avatar?.[0]?.path || req.file?.path;
   const coverImageLocalPath = req.files?.coverImage?.[0]?.path;
 
   if (!avatarLocalPath) {
@@ -36,7 +36,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const coverImage = coverImageLocalPath ? await uploadOnCloudinary(coverImageLocalPath) : "";
 
   if (!avatar) {
-    throw new apiError(400, "avatar is required.");
+    throw new apiError(400, "Avatar file upload failed. Please verify your Cloudinary credentials in .env");
   }
 
   const user = await User.create({
