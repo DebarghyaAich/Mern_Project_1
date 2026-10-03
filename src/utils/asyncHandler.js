@@ -1,11 +1,9 @@
 // standardize try-catch handler in a api/methods
-const asyncHandler = (routeHandler) => {
+const asyncHandler = (requestHandler) => {
   async (req, res, next) => {
-    Promise.resolve()
-      .then(() => {
-        routeHandler(req, res, next);
-      })
-      .catch((error) => next(error));
+    Promise.resolve(requestHandler(req, res, next)).catch((error) => {
+      next(error);
+    });
   };
 };
 
